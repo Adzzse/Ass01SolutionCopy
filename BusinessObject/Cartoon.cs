@@ -27,11 +27,10 @@ namespace BusinessObject
         }
 
         public string Password { get; set; }
-        public string qwewqewq { get; set; }
-        public string Country { get; set; }
         public DateTime LaunchDate { get; set; }
         public string CartoonType { get; set; }
         public string ShortDescription { get; set; }
+        public string Producer { get; set; }
         public int Duration { get; set; }
         public string Actors { get; set; }
         public string Director { get; set; }
