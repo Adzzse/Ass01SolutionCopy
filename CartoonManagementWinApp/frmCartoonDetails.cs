@@ -85,6 +85,10 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 {
                     CartoonID = int.Parse(txtCartoonID.Text),
                     CartoonName = txtCartoonName.Text,
+                    CartoonType = txtCartoonType.Text,
+                    Actors = txtActors.Text,
+                    LaunchDate = txtLaunchDate.Text,
+                    Director = txtDirector.Text,
                     ShortDescription = txtShortDescription.Text,
                     Producer = txtProducer.Text,
                     Country = txtCountry.Text
