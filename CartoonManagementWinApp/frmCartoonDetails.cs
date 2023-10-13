@@ -5,7 +5,7 @@ using System;
 
 using System.Windows.Forms;
 
-namespace CartoonManagementWinApp_DoHoangAnh
+namespace CartoonManagementWinApp_DOHOANGANH
 {
     public partial class frmCartoonDetails : Form
     {

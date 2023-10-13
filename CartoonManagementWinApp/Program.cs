@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CartoonManagementWinApp_DoHoangAnh
+namespace CartoonManagementWinApp_DOHOANGANH
 {
     static class Program
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace CartoonManagementWinApp_DoHoangAnh
+namespace CartoonManagementWinApp_DOHOANGANH
 {
     partial class frmLogin
     {

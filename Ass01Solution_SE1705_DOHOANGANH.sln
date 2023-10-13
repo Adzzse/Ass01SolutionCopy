@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessObject", "DataAcc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{F1DE029C-6925-4AFB-A7FC-5D3AABF6E227}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartoonManagementWinApp_DoHoangAnh", "MyStoreWinApp\CartoonManagementWinApp_DoHoangAnh.csproj", "{D67EEC4C-A3D5-49A3-9F81-6495159F03C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartoonManagementWinApp_DOHOANGANH", "CartoonManagementWinApp\CartoonManagementWinApp_DOHOANGANH.csproj", "{D67EEC4C-A3D5-49A3-9F81-6495159F03C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation Layer", "1. Presentation Layer", "{C0F2A2BB-12CA-450E-96B6-33F353F37FFB}"
 EndProject
