@@ -72,7 +72,9 @@ namespace CartoonManagementWinApp_DOHOANGANH
                     Actors = txtActors.Text,
                     Producer = txtProducer.Text,
                     Director = txtDirector.Text,
-                    Country = txtCountry.Text
+                    Country = txtCountry.Text,
+                    LaunchDate = txtLaunchDate.Text,
+                    
                 };
             }
             catch (Exception ex)
@@ -116,6 +118,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 txtDirector.DataBindings.Clear();
                 txtActors.DataBindings.Clear();
                 txtCountry.DataBindings.Clear();
+                txtLaunchDate.DataBindings.Clear();
 
                 txtCartoonID.DataBindings.Add("Text", source, "CartoonID");
                 txtCartoonName.DataBindings.Add("Text", source, "CartoonName");
@@ -126,6 +129,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 txtDirector.DataBindings.Add("Text", source, "Director");
                 txtActors.DataBindings.Add("Text", source, "Actors");
                 txtCountry.DataBindings.Add("Text", source, "Country");
+                txtLaunchDate.DataBindings.Add("Text", source, "LaunchDate");
 
                 dgvCartoonList.DataSource = null;
                 dgvCartoonList.DataSource = source;

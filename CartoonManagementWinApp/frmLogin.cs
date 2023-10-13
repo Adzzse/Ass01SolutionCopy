@@ -35,7 +35,6 @@ namespace CartoonManagementWinApp_DOHOANGANH
             if (loginCartoon != null)
             {
                 MessageBox.Show("Login successfully", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                string username = loginCartoon.Role;
                 frmCartoonManagement frmCartoonManagement = null;
 
                     frmCartoonManagement = new frmCartoonManagement

@@ -27,8 +27,6 @@ namespace DataAccess.Repository
             return CartoonDAO.Instance.Login(Email, Password);
         }
 
-        
-
         public void UpdateCartoon(Cartoon cartoon) => CartoonDAO.Instance.Update(cartoon);
 
         public IEnumerable<Cartoon> SearchCartoonByCountry(string country, IEnumerable<Cartoon> searchList)

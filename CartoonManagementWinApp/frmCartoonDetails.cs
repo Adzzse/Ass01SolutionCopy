@@ -40,6 +40,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 txtProducer.Text = cartoonInfo.Producer;
                 txtDirector.Text = cartoonInfo.Director;
                 txtCountry.Text = cartoonInfo.Country;
+                txtLaunchDate.Text = cartoonInfo.LaunchDate;
             }
         }
 
@@ -58,6 +59,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                     Duration = int.Parse(txtDuration.Text),
                     Actors = txtActors.Text,
                     Director = txtDirector.Text,
+                    LaunchDate = txtLaunchDate.Text
                 };
                 cartoonRepository.UpdateCartoon(cartoon);
                 MessageBox.Show("Update successfully!!", "Update cartoon", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,6 +70,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 txtCountry.Text = cartoon.Country;
                 txtDuration.Text = cartoon.Duration.ToString();
                 txtActors.Text = cartoon.Actors;
+                txtLaunchDate.Text = cartoon.LaunchDate;
             }
             catch (Exception ex)
             {
@@ -84,7 +87,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                     CartoonName = txtCartoonName.Text,
                     ShortDescription = txtShortDescription.Text,
                     Producer = txtProducer.Text,
-                    Country = txtLaunchDate.Text
+                    Country = txtCountry.Text
                 };
                 cartoonRepository.AddCartoon(cartoon);
                 MessageBox.Show("Add successfully!!", "Add new cartoon", MessageBoxButtons.OK, MessageBoxIcon.Information);

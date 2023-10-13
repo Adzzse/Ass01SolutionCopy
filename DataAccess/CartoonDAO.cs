@@ -22,17 +22,6 @@ namespace DataAccess
                                         .Build();
                 string email = config["AdminAccount:email"];
                 string password = config["AdminAccount:password"];
-                //string role = config["AdminAccount:Role"];
-                //Default = new Cartoon
-                //{
-                //    CartoonID = 1,
-                //    Email = email,
-                //    Password = password,
-                //    Role = role,
-                //    Producer = "",
-                //    Country = "",
-                //    CartoonName = "Admin"
-                //};
             }
 
             return Default;
@@ -51,7 +40,8 @@ namespace DataAccess
                 Duration = 8200,
                 Actors="Tom, Jerry",
                 Director="Tim Story",
-                Country = "USA"
+                Country = "USA",
+                LaunchDate = "01/01/2000"
             },
             new Cartoon
             {
@@ -63,7 +53,8 @@ namespace DataAccess
                 Duration = 2200,
                 Actors="Phineas, Ferb",
                 Director="Dan Povenmire",
-                Country = "USA"
+                Country = "USA",
+                LaunchDate = "02/02/2001"
             },
             new Cartoon
             {
@@ -75,7 +66,8 @@ namespace DataAccess
                 Duration = 6700,
                 Actors="Dipper Pines, Mabel Pines",
                 Director="Alex Hirsch",
-                Country = "USA"
+                Country = "USA",
+                LaunchDate = "03/03/2002"
             },
             new Cartoon
             {
@@ -87,7 +79,8 @@ namespace DataAccess
                 Duration = 390,
                 Actors="Rowan Atkinson",
                 Director="Peter Bennett-Jones",
-                Country = "US"
+                Country = "US",
+                LaunchDate = "04/04/2003"
             },
             
             new Cartoon
@@ -100,7 +93,8 @@ namespace DataAccess
                 Duration = 2003,
                 Actors="Alexandra Trese",
                 Director="Budjette Tan",
-                Country = "Singapore"
+                Country = "Singapore",
+                LaunchDate = "05/05/2004"
             }
         };
         private CartoonDAO()

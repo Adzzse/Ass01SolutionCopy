@@ -15,8 +15,10 @@ namespace BusinessObject
         public string Actors { get; set; }
         public string Director { get; set; }
         public string Country { get; set; }
-        
-        
+
+        public string LaunchDate { get; set; }
+
+
         private string email;
         
         public string Email
@@ -39,8 +41,6 @@ namespace BusinessObject
         }
 
         public string Password { get; set; }
-        public string Role { get; set;}
-        public DateTime LaunchDate { get; set; }
         
     }
 }
