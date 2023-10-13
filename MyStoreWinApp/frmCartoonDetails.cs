@@ -24,17 +24,16 @@ namespace CartoonManagementWinApp_DoHoangAnh
                 btnAdd.Visible = true;
                 btnUpdate.Visible = false;
 
-            } else
+            }
+            else
             {
                 btnAdd.Visible = false;
                 btnUpdate.Visible = true;
                 txtCartoonID.Enabled = false;
 
-                txtCartoonID.Text = cartoonInfo.CartoonID.ToString() ;
+                txtCartoonID.Text = cartoonInfo.CartoonID.ToString();
                 txtCartoonName.Text = cartoonInfo.CartoonName;
                 txtShortDescription.Text = cartoonInfo.ShortDescription;
-                txtPassword.Text = cartoonInfo.Password;
-                txtConfirm.Text = cartoonInfo.Password;
                 txtProducer.Text = cartoonInfo.Producer;
                 txtCountry.Text = cartoonInfo.Country;
             }
@@ -49,7 +48,6 @@ namespace CartoonManagementWinApp_DoHoangAnh
                     CartoonID = cartoonInfo.CartoonID,
                     CartoonName = txtCartoonName.Text,
                     ShortDescription = txtShortDescription.Text,
-                    Password = txtPassword.Text,
                     Producer = txtProducer.Text,
                     Country = txtCountry.Text
                 };
@@ -74,13 +72,13 @@ namespace CartoonManagementWinApp_DoHoangAnh
                     CartoonID = int.Parse(txtCartoonID.Text),
                     CartoonName = txtCartoonName.Text,
                     ShortDescription = txtShortDescription.Text,
-                    Password = txtPassword.Text,
                     Producer = txtProducer.Text,
                     Country = txtCountry.Text
                 };
                 cartoonRepository.AddCartoon(cartoon);
                 MessageBox.Show("Add successfully!!", "Add new cartoon", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Add new cartoon", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -91,6 +89,6 @@ namespace CartoonManagementWinApp_DoHoangAnh
             Close();
         }
 
-        
+
     }
 }

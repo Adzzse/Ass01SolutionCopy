@@ -22,18 +22,16 @@ namespace DataAccess
                                         .Build();
                 string email = config["AdminAccount:email"];
                 string password = config["AdminAccount:password"];
+                string role = config["AdminAccount:Role"];
                 Default = new Cartoon
                 {
-                    CartoonID = 0,
-                    CartoonName = "",
-                    LaunchDate = DateTime.Now,
-                    CartoonType = "",
-                    ShortDescription = "",
+                    CartoonID = 1,
+                    Email = email,
+                    Password = password,
+                    Role = role,
                     Producer = "",
-                    Duration = 0,
-                    Actors = "",
-                    Director = "",
-                    Country = ""
+                    Country = "",
+                    CartoonName = "Admin"
                 };
             }
 
@@ -158,10 +156,31 @@ namespace DataAccess
 
         public List<Cartoon> GetCartoonsList => cartoons;
 
-        public Cartoon Login(string Email, string Password)
+        public Cartoon Login(string providedEmail, string providedPassword)
         {
-            Cartoon cartoon = cartoons.SingleOrDefault(mb => mb.Email.Equals(Email) && mb.Password.Equals(Password));
-            return cartoon;
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .Build();
+
+            string emailFromConfig = config["AdminAccount:Email"];
+            string passwordFromConfig = config["AdminAccount:Password"];
+
+            if (providedEmail.Equals(emailFromConfig) && providedPassword.Equals(passwordFromConfig))
+            {
+                // Login successful, create and return a Cartoon object
+                return new Cartoon
+                {
+                    CartoonID = 1,
+                    Email = providedEmail,
+                    Password = providedPassword,
+                    CartoonName = "Admin"
+                    // Add other properties as needed
+                };
+            }
+
+            // Login failed, return null
+            return null;
         }
 
         public Cartoon GetCartoon(int CartoonId)
@@ -258,14 +277,14 @@ namespace DataAccess
             return searchResult;
         }
 
-        public IEnumerable<Cartoon> FilterCartoonByCity(string country, string city, IEnumerable<Cartoon> searchList)
+        public IEnumerable<Cartoon> FilterCartoonByCity(string country, string producer, IEnumerable<Cartoon> searchList)
         {
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in searchList
-                                where cartoon.Producer == city
+                                where cartoon.Producer == producer
                                 select cartoon;
-            if (city.Equals("All"))
+            if (producer.Equals("All"))
             {
                 cartoonSearch = from cartoon in searchList
                                 where cartoon.Country == country

@@ -9,6 +9,7 @@ namespace BusinessObject
         public string CartoonName { get; set; }
 
         private string email;
+        
         public string Email
         {
             get
@@ -29,6 +30,7 @@ namespace BusinessObject
         }
 
         public string Password { get; set; }
+        public string Role { get; set;}
         public DateTime LaunchDate { get; set; }
         public string CartoonType { get; set; }
         public string ShortDescription { get; set; }
