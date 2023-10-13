@@ -17,8 +17,5 @@ namespace DataAccess.Repository
         public IEnumerable<Cartoon> SearchCartoon(int id);
         public IEnumerable<Cartoon> SearchCartoon(string name);
         public IEnumerable<Cartoon> SearchCartoonByCountry(string country, IEnumerable<Cartoon> searchList);
-        public IEnumerable<Cartoon> SearchCartoonByCity(string country, string city, IEnumerable<Cartoon> searchList);
-
-
     }
 }

@@ -35,10 +35,5 @@ namespace DataAccess.Repository
         {
             return CartoonDAO.Instance.FilterCartoonByCountry(country, searchList);
         }
-
-        public IEnumerable<Cartoon> SearchCartoonByCity(string country, string city, IEnumerable<Cartoon> searchList)
-        {
-            return CartoonDAO.Instance.FilterCartoonByCity(country, city, searchList);
-        }
     }
 }

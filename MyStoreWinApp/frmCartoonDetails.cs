@@ -34,7 +34,11 @@ namespace CartoonManagementWinApp_DoHoangAnh
                 txtCartoonID.Text = cartoonInfo.CartoonID.ToString();
                 txtCartoonName.Text = cartoonInfo.CartoonName;
                 txtShortDescription.Text = cartoonInfo.ShortDescription;
+                txtCartoonType.Text = cartoonInfo.CartoonType;
+                txtDuration.Text = cartoonInfo.Duration.ToString();
+                txtActors.Text = cartoonInfo.Actors;
                 txtProducer.Text = cartoonInfo.Producer;
+                txtDirector.Text = cartoonInfo.Director;
                 txtCountry.Text = cartoonInfo.Country;
             }
         }
@@ -49,14 +53,21 @@ namespace CartoonManagementWinApp_DoHoangAnh
                     CartoonName = txtCartoonName.Text,
                     ShortDescription = txtShortDescription.Text,
                     Producer = txtProducer.Text,
-                    Country = txtCountry.Text
+                    Country = txtCountry.Text,
+                    CartoonType = txtCartoonType.Text,
+                    Duration = int.Parse(txtDuration.Text),
+                    Actors = txtActors.Text,
+                    Director = txtDirector.Text,
                 };
                 cartoonRepository.UpdateCartoon(cartoon);
                 MessageBox.Show("Update successfully!!", "Update cartoon", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtCartoonName.Text = cartoon.CartoonName;
                 txtShortDescription.Text = cartoon.ShortDescription;
                 txtProducer.Text = cartoon.Producer;
+                txtDirector.Text = cartoon.Director;
                 txtCountry.Text = cartoon.Country;
+                txtDuration.Text = cartoon.Duration.ToString();
+                txtActors.Text = cartoon.Actors;
             }
             catch (Exception ex)
             {
@@ -73,7 +84,7 @@ namespace CartoonManagementWinApp_DoHoangAnh
                     CartoonName = txtCartoonName.Text,
                     ShortDescription = txtShortDescription.Text,
                     Producer = txtProducer.Text,
-                    Country = txtCountry.Text
+                    Country = txtLaunchDate.Text
                 };
                 cartoonRepository.AddCartoon(cartoon);
                 MessageBox.Show("Add successfully!!", "Add new cartoon", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -89,6 +100,19 @@ namespace CartoonManagementWinApp_DoHoangAnh
             Close();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void lbPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtActors_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

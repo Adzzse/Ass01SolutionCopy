@@ -27,7 +27,6 @@ namespace CartoonManagementWinApp_DoHoangAnh
         IEnumerable<Cartoon> filterResult;
 
         IEnumerable<string> countryList;
-        Dictionary<string, IEnumerable<string>> cityDictionary;
 
         public frmCartoonManagement()
         {
@@ -37,14 +36,22 @@ namespace CartoonManagementWinApp_DoHoangAnh
         private void frmCartoonManagement_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
+
             txtCartoonID.Enabled = false;
             txtCartoonName.Enabled = false;
             txtShortDescription.Enabled = false;
+            txtCartoonType.Enabled = false;
+            txtProducer.Enabled = false;
+            txtDuration.Enabled = false;
             txtActors.Enabled = false;
+            txtDirector.Enabled = false;
             txtCountry.Enabled = false;
+
             btnNew.Enabled = false;
             dgvCartoonList.Enabled = false;
+
             btnLoad.Enabled = true;
+
             grSearch.Enabled = false;
             grFilter.Enabled = false;
         }
@@ -59,7 +66,11 @@ namespace CartoonManagementWinApp_DoHoangAnh
                     CartoonID = int.Parse(txtCartoonID.Text),
                     CartoonName = txtCartoonName.Text,
                     ShortDescription = txtShortDescription.Text,
+                    CartoonType = txtCartoonType.Text,
+                    Duration = int.Parse(txtDuration.Text),
+                    Actors = txtActors.Text,
                     Producer = txtActors.Text,
+                    Director = txtDirector.Text,
                     Country = txtCountry.Text
                 };
             }
@@ -82,18 +93,6 @@ namespace CartoonManagementWinApp_DoHoangAnh
                                   orderby cartoon.Country ascending
                                   select cartoon.Country;
                     countryList = countryList.Distinct();
-                    cityDictionary = new Dictionary<string, IEnumerable<string>>();
-                    foreach (var country in countryList)
-                    {
-                        var cityList = from cartoon in dataSource
-                                       where !string.IsNullOrEmpty(cartoon.Producer.Trim()) && (cartoon.Country.Equals(country))
-                                       orderby cartoon.Producer ascending
-                                       select cartoon.Producer;
-                        cityList = cityList.Prepend("All");
-                        cityList = cityList.Distinct();
-
-                        cityDictionary.Add(country, cityList);
-                    }
 
                     countryList = countryList.Prepend("All");
 
@@ -110,12 +109,20 @@ namespace CartoonManagementWinApp_DoHoangAnh
                 txtCartoonID.DataBindings.Clear();
                 txtCartoonName.DataBindings.Clear();
                 txtShortDescription.DataBindings.Clear();
+                txtCartoonType.DataBindings.Clear();
+                txtProducer.DataBindings.Clear();
+                txtDuration.DataBindings.Clear();
+                txtDirector.DataBindings.Clear();
                 txtActors.DataBindings.Clear();
                 txtCountry.DataBindings.Clear();
 
                 txtCartoonID.DataBindings.Add("Text", source, "CartoonID");
                 txtCartoonName.DataBindings.Add("Text", source, "CartoonName");
                 txtShortDescription.DataBindings.Add("Text", source, "ShortDescription");
+                txtCartoonType.DataBindings.Add("Text", source, "CartoonType");
+                txtProducer.DataBindings.Add("Text", source, "Producer");
+                txtDuration.DataBindings.Add("Text", source, "Duration");
+                txtDirector.DataBindings.Add("Text", source, "Director");
                 txtActors.DataBindings.Add("Text", source, "Producer");
                 txtCountry.DataBindings.Add("Text", source, "Country");
 
@@ -314,6 +321,16 @@ namespace CartoonManagementWinApp_DoHoangAnh
         }
 
         private void lbCartoonID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grSearch_Enter(object sender, EventArgs e)
         {
 
         }

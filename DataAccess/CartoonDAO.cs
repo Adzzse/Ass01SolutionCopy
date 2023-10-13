@@ -22,17 +22,17 @@ namespace DataAccess
                                         .Build();
                 string email = config["AdminAccount:email"];
                 string password = config["AdminAccount:password"];
-                string role = config["AdminAccount:Role"];
-                Default = new Cartoon
-                {
-                    CartoonID = 1,
-                    Email = email,
-                    Password = password,
-                    Role = role,
-                    Producer = "",
-                    Country = "",
-                    CartoonName = "Admin"
-                };
+                //string role = config["AdminAccount:Role"];
+                //Default = new Cartoon
+                //{
+                //    CartoonID = 1,
+                //    Email = email,
+                //    Password = password,
+                //    Role = role,
+                //    Producer = "",
+                //    Country = "",
+                //    CartoonName = "Admin"
+                //};
             }
 
             return Default;
@@ -47,11 +47,11 @@ namespace DataAccess
                 CartoonName = "Tom and Jerry",
                 ShortDescription = "meo duoi chuoi",
                 CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
+                Producer = "Christopher DeFaria",
+                Duration = 8200,
+                Actors="Tom, Jerry",
+                Director="Tim Story",
+                Country = "USA"
             },
             new Cartoon
             {
@@ -59,11 +59,11 @@ namespace DataAccess
                 CartoonName = "Phineas and Ferb",
                 ShortDescription = "Phuong va Phat",
                 CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
+                Producer = "Dan Povenmire",
+                Duration = 2200,
+                Actors="Phineas, Ferb",
+                Director="Dan Povenmire",
+                Country = "USA"
             },
             new Cartoon
             {
@@ -237,23 +237,23 @@ namespace DataAccess
             }
         }
 
-        public IEnumerable<Cartoon> SearchCartoon(int id)
+        public IEnumerable<Cartoon> SearchCartoon(int actor)
         {
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in cartoons
-                                where cartoon.CartoonID == id
+                                where cartoon.Actors.ToLower().Contains(actor.ToString())
                                 select cartoon;
             searchResult = cartoonSearch;
 
             return searchResult;
         }
-        public IEnumerable<Cartoon> SearchCartoon(string name)
+        public IEnumerable<Cartoon> SearchCartoon(string producer)
         {
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in cartoons
-                                where cartoon.CartoonName.ToLower().Contains(name.ToLower())
+                                where cartoon.Producer.ToLower().Contains(producer.ToLower())
                                 select cartoon;
             searchResult = cartoonSearch;
 
@@ -271,29 +271,6 @@ namespace DataAccess
             {
                 cartoonSearch = from cartoon in searchList
                                 select cartoon;
-            }
-            searchResult = cartoonSearch;
-
-            return searchResult;
-        }
-
-        public IEnumerable<Cartoon> FilterCartoonByCity(string country, string producer, IEnumerable<Cartoon> searchList)
-        {
-            IEnumerable<Cartoon> searchResult = null;
-
-            var cartoonSearch = from cartoon in searchList
-                                where cartoon.Producer == producer
-                                select cartoon;
-            if (producer.Equals("All"))
-            {
-                cartoonSearch = from cartoon in searchList
-                                where cartoon.Country == country
-                                select cartoon;
-                if (country.Equals("All"))
-                {
-                    cartoonSearch = from cartoon in searchList
-                                    select cartoon;
-                }
             }
             searchResult = cartoonSearch;
 
