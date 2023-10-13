@@ -31,11 +31,11 @@ namespace CartoonManagementWinApp_DoHoangAnh
         {
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.lbCountry = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtProducer = new System.Windows.Forms.TextBox();
             this.lbCity = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtShortDescription = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.txtCartoonName = new System.Windows.Forms.TextBox();
             this.lbCartoonName = new System.Windows.Forms.Label();
@@ -64,12 +64,12 @@ namespace CartoonManagementWinApp_DoHoangAnh
             this.lbCountry.TabIndex = 22;
             this.lbCountry.Text = "Producer";
             // 
-            // txtCity
+            // txtProducer
             // 
-            this.txtCity.Location = new System.Drawing.Point(124, 220);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(184, 23);
-            this.txtCity.TabIndex = 21;
+            this.txtProducer.Location = new System.Drawing.Point(124, 220);
+            this.txtProducer.Name = "txtProducer";
+            this.txtProducer.Size = new System.Drawing.Size(184, 23);
+            this.txtProducer.TabIndex = 21;
             // 
             // lbCity
             // 
@@ -78,7 +78,7 @@ namespace CartoonManagementWinApp_DoHoangAnh
             this.lbCity.Name = "lbCity";
             this.lbCity.Size = new System.Drawing.Size(28, 15);
             this.lbCity.TabIndex = 20;
-            this.lbCity.Text = "qwewqewq";
+            this.lbCity.Text = "Producer";
             // 
             // txtPassword
             // 
@@ -97,12 +97,12 @@ namespace CartoonManagementWinApp_DoHoangAnh
             this.lbPassword.TabIndex = 18;
             this.lbPassword.Text = "Password";
             // 
-            // txtEmail
+            // txtShortDescription
             // 
-            this.txtEmail.Location = new System.Drawing.Point(124, 97);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(184, 23);
-            this.txtEmail.TabIndex = 17;
+            this.txtShortDescription.Location = new System.Drawing.Point(124, 97);
+            this.txtShortDescription.Name = "txtShortDescription";
+            this.txtShortDescription.Size = new System.Drawing.Size(184, 23);
+            this.txtShortDescription.TabIndex = 17;
             // 
             // lbEmail
             // 
@@ -205,13 +205,13 @@ namespace CartoonManagementWinApp_DoHoangAnh
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.lbCountry);
-            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtProducer);
             this.Controls.Add(this.lbCity);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.lbConfirm);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtShortDescription);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.txtCartoonName);
             this.Controls.Add(this.lbCartoonName);
@@ -230,11 +230,11 @@ namespace CartoonManagementWinApp_DoHoangAnh
 
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label lbCountry;
-        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtProducer;
         private System.Windows.Forms.Label lbCity;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtShortDescription;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox txtCartoonName;
         private System.Windows.Forms.Label lbCartoonName;

@@ -2,13 +2,7 @@
 using DataAccess.Repository;
 using DataValidation;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace CartoonManagementWinApp_DoHoangAnh
@@ -38,10 +32,10 @@ namespace CartoonManagementWinApp_DoHoangAnh
 
                 txtCartoonID.Text = cartoonInfo.CartoonID.ToString() ;
                 txtCartoonName.Text = cartoonInfo.CartoonName;
-                txtEmail.Text = cartoonInfo.Email;
+                txtShortDescription.Text = cartoonInfo.ShortDescription;
                 txtPassword.Text = cartoonInfo.Password;
                 txtConfirm.Text = cartoonInfo.Password;
-                txtCity.Text = cartoonInfo.qwewqewq;
+                txtProducer.Text = cartoonInfo.Producer;
                 txtCountry.Text = cartoonInfo.Country;
             }
         }
@@ -50,31 +44,20 @@ namespace CartoonManagementWinApp_DoHoangAnh
         {
             try
             {
-                if (!Validation.IsEmail(txtEmail.Text))
-                {
-                    throw new Exception("Wrong Email!");
-                }
-                if (!txtPassword.Text.Equals(txtConfirm.Text))
-                {
-                    throw new Exception("Confirm does not match with Password!!!");
-                }
-
                 Cartoon cartoon = new Cartoon
                 {
                     CartoonID = cartoonInfo.CartoonID,
                     CartoonName = txtCartoonName.Text,
-                    Email = txtEmail.Text,
+                    ShortDescription = txtShortDescription.Text,
                     Password = txtPassword.Text,
-                    qwewqewq = txtCity.Text,
+                    Producer = txtProducer.Text,
                     Country = txtCountry.Text
                 };
                 cartoonRepository.UpdateCartoon(cartoon);
                 MessageBox.Show("Update successfully!!", "Update cartoon", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtCartoonName.Text = cartoon.CartoonName;
-                txtEmail.Text = cartoon.Email;
-                txtPassword.Text = cartoon.Password;
-                txtConfirm.Text = cartoon.Password;
-                txtCity.Text = cartoon.qwewqewq;
+                txtShortDescription.Text = cartoon.ShortDescription;
+                txtProducer.Text = cartoon.Producer;
                 txtCountry.Text = cartoon.Country;
             }
             catch (Exception ex)
@@ -86,22 +69,13 @@ namespace CartoonManagementWinApp_DoHoangAnh
         {
             try
             {
-                if (!Validation.IsEmail(txtEmail.Text))
-                {
-                    throw new Exception("Wrong Email!");
-                }
-                if (!txtPassword.Text.Equals(txtConfirm.Text))
-                {
-                    throw new Exception("Confirm does not match with Password!!!");
-                }
-
                 Cartoon cartoon = new Cartoon
                 {
                     CartoonID = int.Parse(txtCartoonID.Text),
                     CartoonName = txtCartoonName.Text,
-                    Email = txtEmail.Text,
+                    ShortDescription = txtShortDescription.Text,
                     Password = txtPassword.Text,
-                    qwewqewq = txtCity.Text,
+                    Producer = txtProducer.Text,
                     Country = txtCountry.Text
                 };
                 cartoonRepository.AddCartoon(cartoon);

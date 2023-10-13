@@ -33,10 +33,8 @@ namespace CartoonManagementWinApp_DoHoangAnh
             txtCartoonID = new System.Windows.Forms.TextBox();
             lbCartoonName = new System.Windows.Forms.Label();
             txtCartoonName = new System.Windows.Forms.TextBox();
-            lbEmail = new System.Windows.Forms.Label();
-            txtEmail = new System.Windows.Forms.TextBox();
-            lbPassword = new System.Windows.Forms.Label();
-            txtPassword = new System.Windows.Forms.TextBox();
+            lbShortDescription = new System.Windows.Forms.Label();
+            txtShortDescription = new System.Windows.Forms.TextBox();
             lbActors = new System.Windows.Forms.Label();
             txtActors = new System.Windows.Forms.TextBox();
             lbCountry = new System.Windows.Forms.Label();
@@ -93,37 +91,21 @@ namespace CartoonManagementWinApp_DoHoangAnh
             txtCartoonName.Size = new System.Drawing.Size(184, 23);
             txtCartoonName.TabIndex = 3;
             // 
-            // lbEmail
+            // lbShortDescription
             // 
-            lbEmail.AutoSize = true;
-            lbEmail.Location = new System.Drawing.Point(26, 112);
-            lbEmail.Name = "lbEmail";
-            lbEmail.Size = new System.Drawing.Size(36, 15);
-            lbEmail.TabIndex = 4;
-            lbEmail.Text = "Email";
+            lbShortDescription.AutoSize = true;
+            lbShortDescription.Location = new System.Drawing.Point(26, 112);
+            lbShortDescription.Name = "lbShortDescription";
+            lbShortDescription.Size = new System.Drawing.Size(95, 15);
+            lbShortDescription.TabIndex = 4;
+            lbShortDescription.Text = "ShortDescription";
             // 
-            // txtEmail
+            // txtShortDescription
             // 
-            txtEmail.Location = new System.Drawing.Point(130, 109);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new System.Drawing.Size(184, 23);
-            txtEmail.TabIndex = 5;
-            // 
-            // lbPassword
-            // 
-            lbPassword.AutoSize = true;
-            lbPassword.Location = new System.Drawing.Point(380, 30);
-            lbPassword.Name = "lbPassword";
-            lbPassword.Size = new System.Drawing.Size(57, 15);
-            lbPassword.TabIndex = 6;
-            lbPassword.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new System.Drawing.Point(446, 27);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new System.Drawing.Size(184, 23);
-            txtPassword.TabIndex = 7;
+            txtShortDescription.Location = new System.Drawing.Point(130, 109);
+            txtShortDescription.Name = "txtShortDescription";
+            txtShortDescription.Size = new System.Drawing.Size(184, 23);
+            txtShortDescription.TabIndex = 5;
             // 
             // lbActors
             // 
@@ -294,7 +276,7 @@ namespace CartoonManagementWinApp_DoHoangAnh
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(660, 525);
+            ClientSize = new System.Drawing.Size(1399, 525);
             Controls.Add(grFilter);
             Controls.Add(grSearch);
             Controls.Add(dgvCartoonList);
@@ -305,10 +287,8 @@ namespace CartoonManagementWinApp_DoHoangAnh
             Controls.Add(lbCountry);
             Controls.Add(txtActors);
             Controls.Add(lbActors);
-            Controls.Add(txtPassword);
-            Controls.Add(lbPassword);
-            Controls.Add(txtEmail);
-            Controls.Add(lbEmail);
+            Controls.Add(txtShortDescription);
+            Controls.Add(lbShortDescription);
             Controls.Add(txtCartoonName);
             Controls.Add(lbCartoonName);
             Controls.Add(txtCartoonID);
@@ -332,10 +312,8 @@ namespace CartoonManagementWinApp_DoHoangAnh
         private System.Windows.Forms.TextBox txtCartoonID;
         private System.Windows.Forms.Label lbCartoonName;
         private System.Windows.Forms.TextBox txtCartoonName;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lbPassword;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lbShortDescription;
+        private System.Windows.Forms.TextBox txtShortDescription;
         private System.Windows.Forms.Label lbActors;
         private System.Windows.Forms.TextBox txtActors;
         private System.Windows.Forms.Label lbCountry;

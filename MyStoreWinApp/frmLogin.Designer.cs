@@ -45,10 +45,10 @@ namespace CartoonManagementWinApp_DoHoangAnh
             lbEmail.TabIndex = 0;
             lbEmail.Text = "Email";
             // 
-            // txtEmail
+            // txtShortDescription
             // 
             txtEmail.Location = new System.Drawing.Point(106, 31);
-            txtEmail.Name = "txtEmail";
+            txtEmail.Name = "txtShortDescription";
             txtEmail.Size = new System.Drawing.Size(300, 23);
             txtEmail.TabIndex = 1;
             // 

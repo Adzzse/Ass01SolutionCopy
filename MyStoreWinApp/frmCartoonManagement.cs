@@ -39,8 +39,7 @@ namespace CartoonManagementWinApp_DoHoangAnh
             btnDelete.Enabled = false;
             txtCartoonID.Enabled = false;
             txtCartoonName.Enabled = false;
-            txtEmail.Enabled = false;
-            txtPassword.Enabled = false;
+            txtShortDescription.Enabled = false;
             txtActors.Enabled = false;
             txtCountry.Enabled = false;
             btnNew.Enabled = false;
@@ -59,9 +58,8 @@ namespace CartoonManagementWinApp_DoHoangAnh
                 {
                     CartoonID = int.Parse(txtCartoonID.Text),
                     CartoonName = txtCartoonName.Text,
-                    Email = txtEmail.Text,
-                    Password = txtPassword.Text,
-                    qwewqewq = txtActors.Text,
+                    ShortDescription = txtShortDescription.Text,
+                    Producer = txtActors.Text,
                     Country = txtCountry.Text
                 };
             }
@@ -88,9 +86,9 @@ namespace CartoonManagementWinApp_DoHoangAnh
                     foreach (var country in countryList)
                     {
                         var cityList = from cartoon in dataSource
-                                       where !string.IsNullOrEmpty(cartoon.qwewqewq.Trim()) && (cartoon.Country.Equals(country))
-                                       orderby cartoon.qwewqewq ascending
-                                       select cartoon.qwewqewq;
+                                       where !string.IsNullOrEmpty(cartoon.Producer.Trim()) && (cartoon.Country.Equals(country))
+                                       orderby cartoon.Producer ascending
+                                       select cartoon.Producer;
                         cityList = cityList.Prepend("All");
                         cityList = cityList.Distinct();
 
@@ -111,16 +109,14 @@ namespace CartoonManagementWinApp_DoHoangAnh
 
                 txtCartoonID.DataBindings.Clear();
                 txtCartoonName.DataBindings.Clear();
-                txtEmail.DataBindings.Clear();
-                txtPassword.DataBindings.Clear();
+                txtShortDescription.DataBindings.Clear();
                 txtActors.DataBindings.Clear();
                 txtCountry.DataBindings.Clear();
 
                 txtCartoonID.DataBindings.Add("Text", source, "CartoonID");
                 txtCartoonName.DataBindings.Add("Text", source, "CartoonName");
-                txtEmail.DataBindings.Add("Text", source, "Email");
-                txtPassword.DataBindings.Add("Text", source, "Password");
-                txtActors.DataBindings.Add("Text", source, "qwewqewq");
+                txtShortDescription.DataBindings.Add("Text", source, "ShortDescription");
+                txtActors.DataBindings.Add("Text", source, "Producer");
                 txtCountry.DataBindings.Add("Text", source, "Country");
 
                 dgvCartoonList.DataSource = null;
@@ -190,8 +186,8 @@ namespace CartoonManagementWinApp_DoHoangAnh
             if (MessageBox.Show($"Do you really want to delete the cartoon: \n" +
             $"Cartoon ID: {cartoon.CartoonID}\n" +
             $"Cartoon Name: {cartoon.CartoonName}\n" +
-            $"Email: {cartoon.Email}\n" +
-            $"qwewqewq: {cartoon.qwewqewq}\n" +
+            $"ShortDescription: {cartoon.ShortDescription}\n" +
+            $"Producer: {cartoon.Producer}\n" +
             $"Country: {cartoon.Country}", "Delete cartoon", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 cartoonRepository.DeleteCartoon(cartoon.CartoonID);

@@ -24,12 +24,16 @@ namespace DataAccess
                 string password = config["AdminAccount:password"];
                 Default = new Cartoon
                 {
-                    CartoonID = 1,
-                    Email = email,
-                    Password = password,
-                    qwewqewq = "",
-                    Country = "",
-                    CartoonName = "Admin"
+                    CartoonID = 0,
+                    CartoonName = "",
+                    LaunchDate = DateTime.Now,
+                    CartoonType = "",
+                    ShortDescription = "",
+                    Producer = "",
+                    Duration = 0,
+                    Actors = "",
+                    Director = "",
+                    Country = ""
                 };
             }
 
@@ -41,66 +45,87 @@ namespace DataAccess
         {
             new Cartoon
             {
+                CartoonID = 1,
+                CartoonName = "Tom and Jerry",
+                ShortDescription = "meo duoi chuoi",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
+            },
+            new Cartoon
+            {
                 CartoonID = 2,
-                CartoonName = "NT Phong",
-                Email = "phong@gmail.com",
-                Password = "123456",
-                qwewqewq = "California",
-                Country = "United States"
+                CartoonName = "Phineas and Ferb",
+                ShortDescription = "Phuong va Phat",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
             },
             new Cartoon
             {
                 CartoonID = 3,
-                CartoonName = "Trần Phong",
-                Email = "tranphong@gmail.com",
-                Password = "abcxyz",
-                qwewqewq = "BRVT",
-                Country = "Vietnam"
+                CartoonName = "Gravity Falls",
+                ShortDescription = "phong@gmail.com",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
             },
             new Cartoon
             {
                 CartoonID = 4,
-                CartoonName = "PhongNT",
-                Email = "phongntse150974@fpt.edu.vn",
-                Password = "123456",
-                qwewqewq = "Hollywood",
-                Country = "United States"
+                CartoonName = "Tom and Jerry",
+                ShortDescription = "phong@gmail.com",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
             },
             new Cartoon
             {
                 CartoonID = 5,
-                CartoonName = "Netflix",
-                Email = "netflix@gmail.com",
-                Password = "123456",
-                qwewqewq = "Tokyo",
-                Country = "Japan"
+                CartoonName = "Tom and Jerry",
+                ShortDescription = "phong@gmail.com",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
             },
             new Cartoon
             {
                 CartoonID = 6,
-                CartoonName = "FPTU",
-                Email = "fptu@gmail.com",
-                Password = "123456",
-                qwewqewq = "London",
-                Country = "United Kingdom"
+                CartoonName = "Tom and Jerry",
+                ShortDescription = "phong@gmail.com",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
             },
             new Cartoon
             {
                 CartoonID = 7,
-                CartoonName = "Conan",
-                Email = "conan@gmail.com",
-                Password = "123456",
-                qwewqewq = "Osaka",
-                Country = "Japan"
-            },
-            new Cartoon
-            {
-                CartoonID = 8,
-                CartoonName = "Phúc Võ",
-                Email = "phucvo@gmail.com",
-                Password = "123456",
-                qwewqewq = "Ho Chi Minh",
-                Country = "Vietnam"
+                CartoonName = "Tom and Jerry",
+                ShortDescription = "phong@gmail.com",
+                CartoonType ="Comedy",
+                Producer = "",
+                Duration = 0,
+                Actors="",
+                Director="",
+                Country = ""
             }
         };
         private CartoonDAO()
@@ -138,14 +163,14 @@ namespace DataAccess
             Cartoon cartoon = cartoons.SingleOrDefault(mb => mb.Email.Equals(Email) && mb.Password.Equals(Password));
             return cartoon;
         }
-        
+
         public Cartoon GetCartoon(int CartoonId)
         {
             return cartoons.SingleOrDefault(mb => mb.CartoonID == CartoonId);
         }
-        public Cartoon GetCartoon(string CartoonEmail)
+        public Cartoon GetCartoon(string ShortDescription)
         {
-            return cartoons.SingleOrDefault(mb => mb.Email.Equals(CartoonEmail));
+            return cartoons.SingleOrDefault(mb => mb.ShortDescription.Equals(ShortDescription));
         }
         public void AddCartoon(Cartoon cartoon)
         {
@@ -154,10 +179,11 @@ namespace DataAccess
                 throw new Exception("Cartoon is undefined!!");
             }
 
-            if (GetCartoon(cartoon.CartoonID) == null && GetCartoon(cartoon.Email) == null)
+            if (GetCartoon(cartoon.CartoonID) == null && GetCartoon(cartoon.ShortDescription) == null)
             {
                 cartoons.Add(cartoon);
-            } else
+            }
+            else
             {
                 throw new Exception("Cartoon is existed!!");
             }
@@ -173,7 +199,8 @@ namespace DataAccess
             {
                 var index = cartoons.IndexOf(mem);
                 cartoons[index] = cartoon;
-            } else
+            }
+            else
             {
                 throw new Exception("Cartoon does not exist!!");
             }
@@ -184,7 +211,8 @@ namespace DataAccess
             if (cartoon != null)
             {
                 cartoons.Remove(cartoon);
-            } else
+            }
+            else
             {
                 throw new Exception("Cartoon does not exist!!");
             }
@@ -195,8 +223,8 @@ namespace DataAccess
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in cartoons
-                               where cartoon.CartoonID == id
-                               select cartoon;
+                                where cartoon.CartoonID == id
+                                select cartoon;
             searchResult = cartoonSearch;
 
             return searchResult;
@@ -206,8 +234,8 @@ namespace DataAccess
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in cartoons
-                               where cartoon.CartoonName.ToLower().Contains(name.ToLower())
-                               select cartoon;
+                                where cartoon.CartoonName.ToLower().Contains(name.ToLower())
+                                select cartoon;
             searchResult = cartoonSearch;
 
             return searchResult;
@@ -218,12 +246,12 @@ namespace DataAccess
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in searchList
-                               where cartoon.Country == country
-                               select cartoon;
+                                where cartoon.Country == country
+                                select cartoon;
             if (country.Equals("All"))
             {
                 cartoonSearch = from cartoon in searchList
-                               select cartoon;
+                                select cartoon;
             }
             searchResult = cartoonSearch;
 
@@ -235,17 +263,17 @@ namespace DataAccess
             IEnumerable<Cartoon> searchResult = null;
 
             var cartoonSearch = from cartoon in searchList
-                               where cartoon.qwewqewq == city
-                               select cartoon;
+                                where cartoon.Producer == city
+                                select cartoon;
             if (city.Equals("All"))
             {
                 cartoonSearch = from cartoon in searchList
-                               where cartoon.Country == country
-                               select cartoon;
+                                where cartoon.Country == country
+                                select cartoon;
                 if (country.Equals("All"))
                 {
                     cartoonSearch = from cartoon in searchList
-                                   select cartoon;
+                                    select cartoon;
                 }
             }
             searchResult = cartoonSearch;

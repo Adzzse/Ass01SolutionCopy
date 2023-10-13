@@ -7,22 +7,24 @@ namespace BusinessObject
     {
         public int CartoonID { get; set; }
         public string CartoonName { get; set; }
-        private string email;
 
+        private string email;
         public string Email
         {
-            get { 
-                return email; 
+            get
+            {
+                return email;
             }
-            set {
+            set
+            {
                 if (Validation.IsEmail(value))
                 {
                     email = value;
-                } else
+                }
+                else
                 {
                     throw new Exception("Wrong format for Email!!");
                 }
-                
             }
         }
 
@@ -34,6 +36,6 @@ namespace BusinessObject
         public int Duration { get; set; }
         public string Actors { get; set; }
         public string Director { get; set; }
-
+        public string Country { get; set; }
     }
 }
