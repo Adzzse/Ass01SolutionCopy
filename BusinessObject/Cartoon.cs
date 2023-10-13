@@ -8,6 +8,15 @@ namespace BusinessObject
         public int CartoonID { get; set; }
         public string CartoonName { get; set; }
 
+        public string CartoonType { get; set; }
+        public string ShortDescription { get; set; }
+        public string Producer { get; set; }
+        public int Duration { get; set; }
+        public string Actors { get; set; }
+        public string Director { get; set; }
+        public string Country { get; set; }
+        
+        
         private string email;
         
         public string Email
@@ -32,12 +41,6 @@ namespace BusinessObject
         public string Password { get; set; }
         public string Role { get; set;}
         public DateTime LaunchDate { get; set; }
-        public string CartoonType { get; set; }
-        public string ShortDescription { get; set; }
-        public string Producer { get; set; }
-        public int Duration { get; set; }
-        public string Actors { get; set; }
-        public string Director { get; set; }
-        public string Country { get; set; }
+        
     }
 }

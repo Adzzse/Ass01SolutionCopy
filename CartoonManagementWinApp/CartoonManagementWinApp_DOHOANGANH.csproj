@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>CartoonManagementWinApp_DOHOANGANH.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

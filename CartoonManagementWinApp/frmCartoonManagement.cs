@@ -46,6 +46,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
             txtActors.Enabled = false;
             txtDirector.Enabled = false;
             txtCountry.Enabled = false;
+            txtLaunchDate.Enabled = false;
 
             btnNew.Enabled = false;
             dgvCartoonList.Enabled = false;
@@ -69,7 +70,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                     CartoonType = txtCartoonType.Text,
                     Duration = int.Parse(txtDuration.Text),
                     Actors = txtActors.Text,
-                    Producer = txtActors.Text,
+                    Producer = txtProducer.Text,
                     Director = txtDirector.Text,
                     Country = txtCountry.Text
                 };
@@ -123,7 +124,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 txtProducer.DataBindings.Add("Text", source, "Producer");
                 txtDuration.DataBindings.Add("Text", source, "Duration");
                 txtDirector.DataBindings.Add("Text", source, "Director");
-                txtActors.DataBindings.Add("Text", source, "Producer");
+                txtActors.DataBindings.Add("Text", source, "Actors");
                 txtCountry.DataBindings.Add("Text", source, "Country");
 
                 dgvCartoonList.DataSource = null;

@@ -37,8 +37,7 @@ namespace CartoonManagementWinApp_DOHOANGANH
                 MessageBox.Show("Login successfully", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string username = loginCartoon.Role;
                 frmCartoonManagement frmCartoonManagement = null;
-                //if (username.Equals("Admin"))
-                //{
+
                     frmCartoonManagement = new frmCartoonManagement
                     {
                         loginCartoon = loginCartoon,
@@ -46,20 +45,6 @@ namespace CartoonManagementWinApp_DOHOANGANH
                     frmCartoonManagement.Closed += (s, args) => this.Close();
                     this.Hide();
                     frmCartoonManagement.Show();
-                //}
-                //else
-                //{
-                //    frmCartoonDetails frmCartoonDetails = new frmCartoonDetails
-                //    {
-                //        Text = "Cartoon Details",
-                //        cartoonInfo = loginCartoon,
-                //        InsertOrUpdate = false,
-                //        cartoonRepository = cartoonRepository
-                //    };
-                //    frmCartoonDetails.Closed += (s, args) => this.Close();
-                //    this.Hide();
-                //    frmCartoonDetails.Show();
-                //}
             }
             else
             {

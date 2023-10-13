@@ -45,7 +45,7 @@ namespace DataAccess
             {
                 CartoonID = 1,
                 CartoonName = "Tom and Jerry",
-                ShortDescription = "meo duoi chuoi",
+                ShortDescription = "Mèo chuột đuổi nhau nát nhà",
                 CartoonType ="Comedy",
                 Producer = "Christopher DeFaria",
                 Duration = 8200,
@@ -57,7 +57,7 @@ namespace DataAccess
             {
                 CartoonID = 2,
                 CartoonName = "Phineas and Ferb",
-                ShortDescription = "Phuong va Phat",
+                ShortDescription = "Phương và Phát (và những người bạn)",
                 CartoonType ="Comedy",
                 Producer = "Dan Povenmire",
                 Duration = 2200,
@@ -69,61 +69,38 @@ namespace DataAccess
             {
                 CartoonID = 3,
                 CartoonName = "Gravity Falls",
-                ShortDescription = "phong@gmail.com",
-                CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
+                ShortDescription = "Pines' bizzare adventure",
+                CartoonType ="Adventure",
+                Producer = "Tobias Conan Trost",
+                Duration = 6700,
+                Actors="Dipper Pines, Mabel Pines",
+                Director="Alex Hirsch",
+                Country = "USA"
             },
             new Cartoon
             {
                 CartoonID = 4,
-                CartoonName = "Tom and Jerry",
-                ShortDescription = "phong@gmail.com",
-                CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
+                CartoonName = "Mr.Bean",
+                ShortDescription = "a child in a grown man's body",
+                CartoonType ="British sitcom",
+                Producer = "Sue Vertue",
+                Duration = 390,
+                Actors="Rowan Atkinson",
+                Director="Peter Bennett-Jones",
+                Country = "US"
             },
+            
             new Cartoon
             {
                 CartoonID = 5,
-                CartoonName = "Tom and Jerry",
-                ShortDescription = "phong@gmail.com",
-                CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
-            },
-            new Cartoon
-            {
-                CartoonID = 6,
-                CartoonName = "Tom and Jerry",
-                ShortDescription = "phong@gmail.com",
-                CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
-            },
-            new Cartoon
-            {
-                CartoonID = 7,
-                CartoonName = "Tom and Jerry",
-                ShortDescription = "phong@gmail.com",
-                CartoonType ="Comedy",
-                Producer = "",
-                Duration = 0,
-                Actors="",
-                Director="",
-                Country = ""
+                CartoonName = "Trese",
+                ShortDescription = "anime-influenced streaming television series",
+                CartoonType ="Crime, horror",
+                Producer = "BASE Entertainment",
+                Duration = 2003,
+                Actors="Alexandra Trese",
+                Director="Budjette Tan",
+                Country = "Singapore"
             }
         };
         private CartoonDAO()
